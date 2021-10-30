@@ -19,8 +19,18 @@ from django.urls.conf import include
 from django.conf.urls.static import static
 from django.conf import settings
 
+from rest_framework.schemas import get_schema_view
+from rest_framework.documentation import include_docs_urls
+
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/user/', include('user.urls')),
     path('api/recipe/', include('recipe.urls')),
+    path('docs/', include_docs_urls(title='Recipe API')),
+    path('schema', get_schema_view(
+        title="Recipe API",
+        description="API for creating and organizing recipes",
+        version="1.0.0"
+    ), name='openapi-schema')
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
