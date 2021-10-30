@@ -15,7 +15,7 @@ Esta API desenvolvida com o django-rest framework tem como objetivo fornecer uma
 * Testes automatizados;
 
 ## Como utilizar
----
+
 Para utilização da API, clone o repositório e tenha do Docker previamente instalado. Feito isso, basta executar o seguinte comando para construção dos containers:
 
 ```shell
